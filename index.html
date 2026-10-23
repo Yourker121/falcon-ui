@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SpaceX Clone</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">SPACEX</div>
+
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger">&#9776;</label>
+
+    <ul class="nav-links">
+      <li class="dropdown">
+        <input type="checkbox" id="vehicles-toggle">
+        <label for="vehicles-toggle">VEHICLES ▾</label>
+        <ul class="dropdown-menu">
+          <li><a href="#">STARSHIP</a></li>
+          <li><a href="#">DRAGON</a></li>
+          <li><a href="#">FALCON 9</a></li>
+          <li><a href="#">FALCON HEAVY</a></li>
+        </ul>
+      </li>
+      <li><a href="#">LAUNCHES</a></li>
+      <li><a href="#">HUMAN SPACEFLIGHT</a></li>
+      <li><a href="#">RIDESHARE</a></li>
+      <li><a href="#">STARLINK</a></li>
+      <li><a href="#">STARSHIELD</a></li>
+      <li class="dropdown">
+        <input type="checkbox" id="company-toggle">
+        <label for="company-toggle">COMPANY ▾</label>
+        <ul class="dropdown-menu">
+          
+          <li><a href="#">MISSION</a></li>
+          <li><a href="./pages/career.html">CAREERS</a></li>
+          <li><a href="#">UPDATES</a></li>
+        </ul>
+      </li>
+      <li><a href="#">SHOP</a></li>
+    </ul>
+
+    <div class="launch-btn">
+      <a href="#">
+        <span class="label">Upcoming Launches</span>
+        <span class="timer">T-02:00:00</span>
+      </a>
+    </div>
+  </header>
+
+  
+  <section class="hero1">
+    <div class="hero1-content">
+      <span class="coundown">AUGEST 27, 2025</span>
+      <h1 >STARSHIP'S TENTH FLIGHT TEST</h1>
+      <a href="#" class="watch-btn">WATCH ⟶</a>
+    </div>
+  </section>
+
+
+  <section class="hero2">
+    <div class="hero2-content">
+      <h1 style="font-size: 50px; padding-bottom: 10px;">MAKING LIFE  <br>MULTIPLANETARY</h1>
+      <P style="padding-bottom: 10px;">SpaceX was founded under the belief that a future where humanity is out exploring the stars is <br> fundamentally more exciting than one where we are not.</P>
+      <a href="#" class="watch-btn">EXPLORE ⟶</a>
+    </div>
+  </section>
+
+  <section class="hero3">
+    <div class="hero3-content">
+      <h1 style="font-size: 45px; padding-bottom: 10px;">REVOLUTIONIZING SPACE <br> TECHNOLOGY</h1>
+      <p style="padding-bottom: 10px;">SpaceX’s Starship spacecraft and Super Heavy rocket is a fully reusable transportation system <br> designed to carry both crew and cargo to Earth orbit, the Moon, Mars, and beyond.</p>
+      <a href="#" class="watch-btn">LEARN MORE ⟶</a>
+    </div>
+  </section>
+
+  <section class="hero4">
+    <div class="hero4-content">
+      <h1 style="font-size: 45px; padding-bottom: 10px;">WORLD'S LEADING LAUNCH <br>SERVICE PROVIDER</h1>
+      <p style="padding-bottom: 10px;">SpaceX leads the world in launches with its reliable, reusable rockets and is developing the fully <br>and rapidly reusable rockets necessary to transform humanity’s ability to access space into <br>something as routine as air travel</p>
+      <a href="#" class="watch-btn">RESERVE YOUR RIDE ⟶</a>
+    </div>
+  </section>
+
+  <section class="hero5">
+    <div class="hero5-content">
+      <h1 style="font-size: 45px; padding-bottom: 10px;">ADVANCING HUMAN <br>SPACELIGHT</h1>
+      <p style="padding-bottom: 10px;">Since returning human spaceflight capabilities to the United States in 2020, SpaceX is helping <br>build a new era where not just hundreds of people, but thousands and ultimately millions will be <br>able to explore space. </p>
+      <a href="#" class="watch-btn">JOIN A MISSION ⟶</a>
+    </div>
+  </section>
+
+  <section class="hero6">
+    <div class="hero6-content">
+      <h1 style="font-size: 45px; padding-bottom: 10px;">DELIVERED HIGH SPEED <br> INTERNET FROM SPACE</h1>
+      <P style="padding-bottom: 10px;">Starlink is the world’s most advanced satellite constellation in low-Earth orbit, delivering reliable <br> broadband internet capable of supporting streaming, online gaming, video calls, and more</P>
+      <a href="#" class="watch-btn">ORDER NOW ⟶</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="logo2">
+      <img src="./images/download.jpeg" alt="" class="logo2">
+    </div>
+    <div class="footer-links">
+      <a href="">Careers</a>
+      <a href="#">Updates</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Suppliers</a>
+    </div>
+    <div class="footer-right">
+      ©2025 SPACEX
+    </div>
+  </footer>
+
+
+  <script>
+    let timeleft = 2 * 60 *60 ;
+    let timeElement = document.querySelector(".timer");
+
+    let coundown = setInterval(() => {
+      let hours = Math.floor(timeleft / 3600);
+      let minutes = Math.floor ((timeleft % 3600) / 60);
+      let seconds = timeleft % 60 ;
+
+      let fromattedTime = 
+      "T-" +
+      
+      String(hours).padStart(2 , "0") + ":" +
+      String(minutes).padStart(2 , "0") + ":" +
+      String(seconds).padStart(2 , "0"); 
+
+      timeElement.textContent = fromattedTime;
+
+      timeleft--;
+      
+      if(timeleft < 0) {
+        clearInterval(coundown);
+        timeElement.textContent ="Launched";
+      }
+
+    },1000);
+  </script>
+
+</body>
+</html>
